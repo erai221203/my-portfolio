@@ -262,4 +262,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 Made with ❤️ by [Eraianbu Rajkumar](https://github.com/erai221203)
 
 
-export PATH="$HOME/.nvm/versions/node/v20.19.5/bin:$PATH" && cd /Users/Eraianbu.Rajkumar@statsperform.global/Downloads/port && npm run dev
