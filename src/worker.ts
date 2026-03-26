@@ -5,6 +5,9 @@ interface Env {
   ENVIRONMENT: string;
 }
 
+// ASSET_MANIFEST is automatically provided by Wrangler at build time
+declare const ASSET_MANIFEST: Record<string, string>;
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     try {
