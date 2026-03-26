@@ -8,25 +8,18 @@ compatibility_flags = ["nodejs_compat"]
 command = "npm run build"
 cwd = "."
 
+# Routes configuration
+routes = [
+  { pattern = "eraianbu.pages.dev", zone_name = "pages.dev" }
+]
+
 # Environment configuration
 [env.production]
-routes = [
-  { pattern = "erai221203.com", zone_name = "erai221203.com" }
-]
 vars = { ENVIRONMENT = "production" }
 
 [env.development]
 vars = { ENVIRONMENT = "development" }
 
-# KV Namespace bindings (optional)
-# [[kv_namespaces]]
-# binding = "CACHE"
-# id = "your-kv-namespace-id"
-
 # Portfolio API configuration
 [site]
 bucket = "./dist"
-
-[[routes]]
-pattern = "*"
-zone_name = "erai221203.com"
