@@ -1,18 +1,11 @@
 name = "my-portfolio"
-main = "src/worker.ts"
 compatibility_date = "2024-01-15"
-compatibility_flags = ["nodejs_compat"]
 
-# Build configuration
-[build]
-command = "npm run build"
-cwd = "."
+# Serve static files from Vite build
+[assets]
+directory = "./dist"
 
-# Site configuration for static assets
-[site]
-bucket = "./dist"
-
-# Environment configuration
+# Optional: Environment variables
 [env.production]
 vars = { ENVIRONMENT = "production" }
 
