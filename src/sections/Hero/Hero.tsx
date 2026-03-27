@@ -27,8 +27,7 @@ const itemVariants = {
 
 const roles = [
   'QA Intelligence Intern',
-  'Data Analyst',
-  'AIML Engineer',
+
   
 ]
 
