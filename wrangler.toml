@@ -8,10 +8,9 @@ compatibility_flags = ["nodejs_compat"]
 command = "npm run build"
 cwd = "."
 
-# Routes configuration
-routes = [
-  { pattern = "eraianbu.pages.dev", zone_name = "pages.dev" }
-]
+# Site configuration for static assets
+[site]
+bucket = "./dist"
 
 # Environment configuration
 [env.production]
@@ -19,7 +18,3 @@ vars = { ENVIRONMENT = "production" }
 
 [env.development]
 vars = { ENVIRONMENT = "development" }
-
-# Portfolio API configuration
-[site]
-bucket = "./dist"
