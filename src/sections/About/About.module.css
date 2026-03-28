@@ -299,20 +299,50 @@
   .infoGrid {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  .introTitle {
+    font-size: 2rem;
+  }
+  
+  .columnTitle {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .aboutIntro {
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .introIcon {
+    font-size: 1.75rem;
+  }
+  
   .introTitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .introText {
     font-size: 1rem;
+    line-height: 1.7;
   }
 
   .infoGrid {
     grid-template-columns: 1fr;
-    max-width: 400px;
+    gap: var(--spacing-sm);
+    max-width: 100%;
+  }
+  
+  .infoCard {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+  
+  .infoLabel {
+    font-size: 0.65rem;
+  }
+  
+  .infoValue {
+    font-size: 0.8rem;
   }
 
   .columnHeader {
@@ -320,6 +350,10 @@
   }
 
   .columnTitle {
+    font-size: 1.25rem;
+  }
+  
+  .columnIcon {
     font-size: 1.5rem;
   }
 
@@ -337,5 +371,112 @@
 
   .itemTitle {
     font-size: 0.95rem;
+  }
+  
+  .timelineScroll {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutIntro {
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .introIcon {
+    font-size: 1.5rem;
+  }
+  
+  .introTitle {
+    font-size: 1.25rem;
+  }
+  
+  .introText {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+    max-width: 100%;
+  }
+  
+  .infoCard {
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-xs);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .infoIcon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+  
+  .infoContent {
+    text-align: center;
+  }
+  
+  .infoLabel {
+    font-size: 0.6rem;
+  }
+  
+  .infoValue {
+    font-size: 0.75rem;
+  }
+  
+  .interests {
+    gap: var(--spacing-xs);
+  }
+  
+  .interestTag {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.75rem;
+  }
+  
+  .columnIcon {
+    font-size: 1.25rem;
+  }
+  
+  .columnTitle {
+    font-size: 1.1rem;
+  }
+  
+  .columnHeader {
+    margin-bottom: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+  
+  .timeline {
+    padding-left: var(--spacing-md);
+  }
+  
+  .timelineDot {
+    left: calc(-1 * var(--spacing-md) + 2px);
+    width: 10px;
+    height: 10px;
+  }
+  
+  .timelineContent {
+    padding: var(--spacing-sm);
+  }
+  
+  .itemTitle {
+    font-size: 0.9rem;
+  }
+  
+  .itemPeriod,
+  .itemDescription,
+  .itemGrade,
+  .itemCompany {
+    font-size: 0.75rem;
+  }
+  
+  .timelineScroll {
+    max-height: 300px;
+    padding-right: var(--spacing-xs);
   }
 }

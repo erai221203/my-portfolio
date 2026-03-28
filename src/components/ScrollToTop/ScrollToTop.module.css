@@ -29,3 +29,13 @@
     right: var(--spacing-lg);
   }
 }
+
+@media (max-width: 480px) {
+  .scrollToTop {
+    width: 40px;
+    height: 40px;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    font-size: 0.9rem;
+  }
+}

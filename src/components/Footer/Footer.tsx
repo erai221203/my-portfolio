@@ -31,14 +31,7 @@ function Footer() {
         </div>
         
         <p className={styles.copyright}>
-          © {currentYear} {personalInfo.name}. Built with{' '}
-          <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
-            React
-          </a>{' '}
-          &{' '}
-          <a href="https://www.framer.com/motion/" target="_blank" rel="noopener noreferrer">
-            Framer Motion
-          </a>
+          © {currentYear} {personalInfo.name}
         </p>
       </div>
     </footer>

@@ -198,9 +198,9 @@ export const experience: Experience[] = [
 ]
 
 export const education: Education[] = [
-  { institution: 'Kumaraguru College of Technology', degree: 'B.Tech Artificial Intelligence and Data Science', period: '2022 — Present', grade: 'CGPA: 8.01 (Till 5th semester)' },
+  { institution: 'Kumaraguru College of Technology, Coimbatore', degree: 'B.Tech Artificial Intelligence and Data Science', period: '2022 — Present', grade: 'CGPA: 7.63 Credits: 132 (Till 6th semester)' },
   { institution: 'The Vijay Millennium SR Sec School, Krishnagiri', degree: 'Higher Secondary (Class 11 & 12)', period: '2020 — 2022', grade: 'Secured 74.5% in 12th standard' },
-  { institution: 'Sri Vijay Vidyalaya Boys HR Sec School, DPI', degree: 'Class 10', period: '2019 — 2020', grade: 'Secured 96.4% in 10th standard' },
+  { institution: 'Sri Vijay Vidyalaya Boys HR Sec School, Dharmapuri', degree: 'Class 10', period: '2019 — 2020', grade: 'Secured 96.4% in 10th standard' },
 ]
 
 export const clients: Client[] = [
@@ -212,8 +212,10 @@ export const clients: Client[] = [
 
 export const certificates: Certificate[] = [
   { title: 'Leadership and Volunteerism Award - Yugam', issuer: 'KI', date: 'March, 2026', url: '/assets/images/Cert/LVA-Yug.jpg', image: '/assets/images/Cert/LVA-Yug.jpg' },
+  { title: 'AI-Driven Solar Panel Optimization during Cloudy times Using Real-Time Image Processing', issuer: 'IEEE', date: 'Aug 21 & 22, 2026', url: '/assets/images/Cert/RP-CRS.jpg', image: '/assets/images/Cert/RP-CRS.jpg' },
   { title: 'HappyFox Hackathon', issuer: 'HappyFox', date: 'July 24 & 25, 2025', url: '/assets/images/Cert/HappyFox.jpg', image: '/assets/images/Cert/HappyFox.jpg' },
   { title: 'Cloud Radar System', issuer: 'KCT-KCIRI-Ezon', date: 'Apr, 2025', url: '/assets/images/Cert/PC-CRS.jpg', image: '/assets/images/Cert/PC-CRS.jpg' },
+  { title: 'Sustainathon - 25', issuer: 'KSI', date: 'Jan 23 & 24, 2025', url: '/assets/images/Cert/Sustainathon-25.jpg', image: '/assets/images/Cert/Sustainathon-25.jpg' },
   { title: 'Autonomous Mobile Robot', issuer: 'Forge Innovation & Ventures', date: 'Jan, 2025', url: '/assets/images/Cert/Protosem.jpg', image: '/assets/images/Cert/Protosem.jpg' },
   { title: 'Dept Recognition Award - Best Volunteer', issuer: 'KI-Dept of AI & DS', date: 'Apr, 2026', url: '/assets/images/Cert/DRA-BV.jpg', image: '/assets/images/Cert/DRA-BV.jpg' },
   { title: 'Web Development', issuer: 'Udemy', date: 'May 31, 2024', url: 'https://www.udemy.com/certificate/UC-15189e34-4140-4159-b9b7-7cae09ffb38a/', image: '/assets/images/Cert/Web-dev.jpeg' },
@@ -223,7 +225,8 @@ export const certificates: Certificate[] = [
   { title: 'Terra Nova Hackathon', issuer: 'KCT-IEEE', date: 'May 24, 2024', url: '/assets/images/Cert/Terra-Nova.jpeg', image: '/assets/images/Cert/Terra-Nova.jpeg' },
   { title: 'SIHH-2023 Volunteering', issuer: 'Forge Innovation & Ventures-SIH', date: 'Dec, 2023', url: '/assets/images/Cert/SIH-2023.jpg', image: '/assets/images/Cert/SIH-2023.jpg' },
   { title: 'SIHH-2024 Volunteering', issuer: 'Forge Innovation & Ventures-SIH', date: 'Dec, 2024', url: '/assets/images/Cert/SIH-2024.jpg', image: '/assets/images/Cert/SIH-2024.jpg' },
-  { title: 'Robotics and Drones Workshop', issuer: 'KSI-Entudio', date: 'Apr 4, 5 & 6, 2024', url: '/assets/images/Cert/Robotics&Drones.jpg', image: '/assets/images/Cert/Robotics&Drones.jpg' },
+  { title: 'Artistic Fusion : AI Powered Artisty for Story Boarding', issuer: 'IEEE', date: 'Oct 15 to 17, 2024', url: '/assets/images/Cert/RP-Story.jpg', image: '/assets/images/Cert/RP-Story.jpg' },
+  { title: 'Robotics and Drones Workshop', issuer: 'KSI-Entudio', date: 'Apr 4 to 6, 2024', url: '/assets/images/Cert/Robotics&Drones.jpg', image: '/assets/images/Cert/Robotics&Drones.jpg' },
   { title: 'ML Engineer Intern', issuer: 'Codsoft', date: 'May 5 to June 5, 2024', url: '/assets/images/Cert/Codsoft.png', image: '/assets/images/Cert/Codsoft.png' },
   { title: 'Gen AI - Hands on with Transformers', issuer: 'KCT-Dept of AI & DS', date: 'May 7, 2024', url: '/assets/images/Cert/Gen-AI.jpeg', image: '/assets/images/Cert/Gen-AI.jpeg' },
   { title: 'Python Programming Advanced', issuer: 'Infosys', date: 'Nov 27, 2023', url: '/assets/images/Cert/Infosys.jpg', image: '/assets/images/Cert/Infosys.jpg' },
@@ -254,20 +257,25 @@ export const projectImages = {
 
 // Certificate Images (place in /public/assets/images/Cert/)
 export const certificateImages = {
-  crs: '/assets/images/Cert/CRS.svg',
-  protosem: '/assets/images/Cert/Protosem.svg',
-  award: '/assets/images/Cert/Award.svg',
-  webDev: '/assets/images/Cert/Web dev.svg',
-  dataScience: '/assets/images/Cert/DATA SCIENCE WITH PYTHON.svg',
-  ros2: '/assets/images/Cert/Ros2.svg',
-  wiseaithon: '/assets/images/Cert/wiseaithon24.svg',
-  terraNova: '/assets/images/Cert/Terra Nova.svg',
-  sih2023: '/assets/images/Cert/SIH2023.svg',
-  sih2024: '/assets/images/Cert/SIH 24.svg',
-  roboticsWorkshop: '/assets/images/Cert/Robotics workshop.svg',
-  codsoft: '/assets/images/Cert/codsoft.svg',
-  genAi: '/assets/images/Cert/genAi.svg',
-  infosys: '/assets/images/Cert/infosys.svg',
+  lvaYug: '/assets/images/Cert/LVA-Yug.jpg',
+  rpCrs: '/assets/images/Cert/RP-CRS.jpg',
+  happyFox: '/assets/images/Cert/HappyFox.jpg',
+  sustainathon25: '/assets/images/Cert/Sustainathon-25.jpg',
+  crs: '/assets/images/Cert/PC-CRS.jpg',
+  protosem: '/assets/images/Cert/Protosem.jpg',
+  award: '/assets/images/Cert/DRA-BV.jpg',
+  webDev: '/assets/images/Cert/Web-dev.jpeg',
+  dataScience: '/assets/images/Cert/GL-DS.jpg',
+  ros2: '/assets/images/Cert/ROS2.jpeg',
+  wiseaithon: '/assets/images/Cert/WiseAiThon-24.jpg',
+  terraNova: '/assets/images/Cert/Terra-Nova.jpeg',
+  sih2023: '/assets/images/Cert/SIH-2023.jpg',
+  sih2024: '/assets/images/Cert/SIH-2024.jpg',
+  rpStory: '/assets/images/Cert/RP-Story.jpg',
+  roboticsWorkshop: '/assets/images/Cert/Robotics&Drones.jpg',
+  codsoft: '/assets/images/Cert/Codsoft.png',
+  genAi: '/assets/images/Cert/Gen-AI.jpeg',
+  infosys: '/assets/images/Cert/Infosys.jpg',
 }
 
 // Client Logos (place in /public/assets/images/clients/)

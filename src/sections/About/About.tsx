@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { FiBook, FiBriefcase, FiMapPin, FiMail, FiAward, FiUser } from 'react-icons/fi'
 import styles from './About.module.css'
+import { personalInfo, education as educationData, experience as experienceData } from '../../data'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -21,90 +22,6 @@ const staggerContainer = {
 
 const interests = ['Machine Learning', 'Computer Vision', 'Robotics', 'Photography', 'Chess', 'DJing']
 
-const education = [
-  {
-    institution: 'Kumaraguru College of Technology',
-    period: '2022 — Present',
-    description: 'Dept- BTech Artificial Intelligence and Data Science',
-    grade: 'CGPA- 8.01 (Till 5th semester)',
-  },
-  {
-    institution: 'The Vijay Millennium SR Sec School, Krishnagiri',
-    period: '2020 — 2022',
-    description: 'Pursued higher secondary of class 11th and class 12th.',
-    grade: 'Secured 74.5% in 12th standard.',
-  },
-  {
-    institution: 'Sri Vijay Vidyalaya Boys HR Sec School, DPI',
-    period: '2019 — 2020',
-    description: 'Pursued class 10th.',
-    grade: 'Secured 96.4% in 10th standard.',
-  },
-]
-
-const experience = [
-  {
-    title: 'Quality Assurance Intelligence Intern',
-    period: 'Oct 2025 — Present',
-    description: 'Quality Assurance Team.',
-    company: 'Stats Perform, Bengaluru, India.',
-  },
-  {
-    title: 'Vice President',
-    period: 'Aug 2025 — Present',
-    description: 'Department of Artificial Intelligence and Data Science.',
-    company: 'Kumaraguru College of Technology.',
-  },
-  {
-    title: 'Alumni Ambassador',
-    period: 'Oct 2024 — Present',
-    description: 'Department of Artificial Intelligence and Data Science.',
-    company: 'Kumaraguru College of Technology.',
-  },
-  {
-    title: 'CRS-Paper Presentation - IEEE',
-    period: 'Apr 2024 — Mar 2025',
-    description: 'AI-Driven Solar Panel Optimization during Cloudy times Using Real-Time Image Processing',
-    company: 'IEEE Paper Presentation',
-  },
-  {
-    title: 'Treasurer',
-    period: 'Aug 2024 — Aug 2025',
-    description: 'Department Association of Artificial Intelligence and Data Science.',
-    company: 'Kumaraguru College of Technology.',
-  },
-  {
-    title: 'Technical Lead',
-    period: 'April 2024 — March 2025',
-    description: 'CRS Project with the company Ezon Energy Solutions (P) Ltd.',
-    company: '',
-  },
-  {
-    title: 'Innovation Engineer - Intern',
-    period: 'Aug 2024 — Dec 2024',
-    description: 'Forge Innovation and Ventures',
-    company: '',
-  },
-  {
-    title: 'Paper Presentation - IEEE',
-    period: 'Apr 2024 — Oct 2024',
-    description: 'Artistic Fusion: AI Powered Artistry for Story Boarding',
-    company: 'IEEE Paper Presentation',
-  },
-  {
-    title: 'ML Engineer - Intern',
-    period: 'May 2024 — June 2024',
-    description: 'Virtual Internship @Codsoft.',
-    company: '',
-  },
-  {
-    title: 'Executive Member',
-    period: 'Oct 2023 — Aug 2024',
-    description: 'Department Association of Artificial Intelligence and Data Science.',
-    company: 'Kumaraguru College of Technology.',
-  },
-]
-
 function About() {
   return (
     <section id="about" className={`section ${styles.about}`}>
@@ -124,18 +41,14 @@ function About() {
 
           <motion.div className={styles.introContent} variants={fadeInUp}>
             <p className={styles.introText}>
-              Hello! I'm <span className={styles.highlight}>Eraianbu Rajkumar</span>, based in Coimbatore, Tamil Nadu, India. 
-              I specialize in building AI-driven solutions that address real-world challenges.
+              Hello! I'm <span className={styles.highlight}>{personalInfo.name}</span>, based in {personalInfo.location}. 
+              {personalInfo.bio}
             </p>
             <p className={styles.introText}>
-              I'm passionate about building AI-driven solutions that address real-world challenges, with hands-on experience in 
-              <span className={styles.highlight}> computer vision</span>, <span className={styles.highlight}>machine learning</span>, and 
-              <span className={styles.highlight}> robotics</span>. My journey includes innovative projects such as a solar tracking system 
-              and an AI-powered storyboard generator.
+              {personalInfo.bio2}
             </p>
             <p className={styles.introText}>
-              My journey includes innovative projects such as a solar tracking system, an AI-powered storyboard generator, and 
-              autonomous mobile robots. I strive to blend functionality with creative design to deliver meaningful digital experiences.
+              {personalInfo.bio3}
             </p>
           </motion.div>
 
@@ -145,21 +58,21 @@ function About() {
               <FiMapPin className={styles.infoIcon} />
               <div className={styles.infoContent}>
                 <span className={styles.infoLabel}>Location</span>
-                <span className={styles.infoValue}>Coimbatore, Tamil Nadu, India</span>
+                <span className={styles.infoValue}>{personalInfo.location}</span>
               </div>
             </div>
             <div className={styles.infoCard}>
               <FiMail className={styles.infoIcon} />
               <div className={styles.infoContent}>
                 <span className={styles.infoLabel}>Email</span>
-                <span className={styles.infoValue}>eraianbu872@gmail.com</span>
+                <span className={styles.infoValue}>{personalInfo.email}</span>
               </div>
             </div>
             <div className={styles.infoCard}>
               <FiBriefcase className={styles.infoIcon} />
               <div className={styles.infoContent}>
                 <span className={styles.infoLabel}>Status</span>
-                <span className={styles.infoValue}>Quality Assurance Intelligence Intern</span>
+                <span className={styles.infoValue}>{experienceData[0]?.title || 'Professional'}</span>
               </div>
             </div>
             <div className={styles.infoCard}>
@@ -197,7 +110,7 @@ function About() {
             </motion.div>
             
             <div className={styles.timeline}>
-              {education.map((item, index) => (
+              {educationData.map((item, index) => (
                 <motion.div
                   key={index}
                   className={styles.timelineItem}
@@ -207,7 +120,7 @@ function About() {
                   <div className={styles.timelineContent}>
                     <h3 className={styles.itemTitle}>{item.institution}</h3>
                     <span className={styles.itemPeriod}>{item.period}</span>
-                    <p className={styles.itemDescription}>{item.description}</p>
+                    <p className={styles.itemDescription}>{item.degree}</p>
                     <p className={styles.itemGrade}>{item.grade}</p>
                   </div>
                 </motion.div>
@@ -230,7 +143,7 @@ function About() {
             
             <div className={styles.timelineScroll}>
               <div className={styles.timeline}>
-                {experience.map((item, index) => (
+                {experienceData.map((item, index) => (
                   <motion.div
                     key={index}
                     className={styles.timelineItem}

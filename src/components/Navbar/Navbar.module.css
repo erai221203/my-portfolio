@@ -152,12 +152,75 @@
   color: var(--color-primary);
 }
 
+@media (max-width: 992px) {
+  .navLinks {
+    gap: var(--spacing-lg);
+  }
+  
+  .navLink {
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .navbarContainer {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+  }
+  
   .navLinks {
     display: none;
   }
   
   .mobileMenuButton {
     display: flex;
+  }
+  
+  .themeToggle {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbarContainer {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+  }
+  
+  .navbar {
+    height: 60px;
+  }
+  
+  .themeToggle {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+  
+  .mobileMenuButton {
+    gap: 4px;
+    padding: var(--spacing-xs);
+  }
+  
+  .mobileMenuButton span {
+    width: 20px;
+    height: 2px;
+  }
+  
+  .mobileMenu {
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+  
+  .mobileNavLink {
+    font-size: 1.1rem;
+    padding: var(--spacing-sm);
   }
 }
