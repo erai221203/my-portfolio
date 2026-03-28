@@ -138,7 +138,7 @@ function Hero() {
             <motion.button
               className={styles.primaryBtn}
               onClick={scrollToContact}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ translateY: -4 }}
               whileTap={{ scale: 0.98 }}
             >
               Let's Talk <FiArrowRight />
@@ -146,7 +146,7 @@ function Hero() {
             <motion.button
               className={styles.secondaryBtn}
               onClick={() => window.open(personalInfo.resumeUrl, '_blank')}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ translateY: -4 }}
               whileTap={{ scale: 0.98 }}
             >
               <FiDownload /> Download CV
@@ -199,7 +199,6 @@ function Hero() {
         <div className={styles.scrollMouse}>
           <div className={styles.scrollWheel} />
         </div>
-        <span>Scroll to explore</span>
       </motion.div>
     </section>
   )
