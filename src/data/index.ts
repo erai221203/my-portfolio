@@ -211,20 +211,22 @@ export const clients: Client[] = [
 ]
 
 export const certificates: Certificate[] = [
-  { title: 'Cloud Radar System', issuer: 'KCT-KCIRI-Ezon', date: 'Apr, 2025', url: '/assets/images/Cert/CRS.svg', image: '/assets/images/Cert/CRS.svg' },
-  { title: 'Autonomous Mobile Robot', issuer: 'Forge Innovation & Ventures', date: 'Jan, 2025', url: '/assets/images/Cert/Protosem.svg', image: '/assets/images/Cert/Protosem.svg' },
-  { title: 'Dept Recognition Award - Best Volunteer', issuer: 'KI-Dept of AI & DS', date: 'Apr, 2026', url: '/assets/images/Cert/Award.svg', image: '/assets/images/Cert/Award.svg' },
-  { title: 'Web Development', issuer: 'Udemy', date: 'May 31, 2024', url: 'https://www.udemy.com/certificate/UC-15189e34-4140-4159-b9b7-7cae09ffb38a/', image: '/assets/images/Cert/Web dev.svg' },
-  { title: 'Data Science with Python', issuer: 'Great Learning', date: 'Apr, 2023', url: 'https://olympus.mygreatlearning.com/courses/11265/certificate?pb_id=581', image: '/assets/images/Cert/DATA SCIENCE WITH PYTHON.svg' },
-  { title: 'ROS2 For Beginners', issuer: 'Udemy', date: 'Mar 26, 2024', url: 'https://www.udemy.com/certificate/UC-f4085bee-232c-4f12-b8a8-1d3e5ad43201/', image: '/assets/images/Cert/Ros2.svg' },
-  { title: 'Wise-AI-Thon-2024', issuer: 'KSI', date: 'Sep 10 & 11, 2024', url: '/assets/images/Cert/wiseaithon24.svg', image: '/assets/images/Cert/wiseaithon24.svg' },
-  { title: 'Terra Nova Hackathon', issuer: 'KCT-IEEE', date: 'May 24, 2024', url: '/assets/images/Cert/Terra Nova.svg', image: '/assets/images/Cert/Terra Nova.svg' },
-  { title: 'SIHH-2023 Volunteering', issuer: 'Forge Innovation & Ventures-SIH', date: 'Dec, 2023', url: '/assets/images/Cert/SIH2023.svg', image: '/assets/images/Cert/SIH2023.svg' },
-  { title: 'SIHH-2024 Volunteering', issuer: 'Forge Innovation & Ventures-SIH', date: 'Dec, 2024', url: '/assets/images/Cert/SIH 24.svg', image: '/assets/images/Cert/SIH 24.svg' },
-  { title: 'Robotics and Drones Workshop', issuer: 'KSI-Entudio', date: 'Apr 4, 5 & 6, 2024', url: '/assets/images/Cert/Robotics workshop.svg', image: '/assets/images/Cert/Robotics workshop.svg' },
-  { title: 'ML Engineer Intern', issuer: 'Codsoft', date: 'May 5 to June 5, 2024', url: '/assets/images/Cert/codsoft.svg', image: '/assets/images/Cert/codsoft.svg' },
-  { title: 'Gen AI - Hands on with Transformers', issuer: 'KCT-Dept of AI & DS', date: 'May 7, 2024', url: '/assets/images/Cert/genAi.svg', image: '/assets/images/Cert/genAi.svg' },
-  { title: 'Python Programming Advanced', issuer: 'Infosys', date: 'Nov 27, 2023', url: '/assets/images/Cert/infosys.svg', image: '/assets/images/Cert/infosys.svg' },
+  { title: 'Leadership and Volunteerism Award - Yugam', issuer: 'KI', date: 'March, 2026', url: '/assets/images/Cert/LVA-Yug.jpg', image: '/assets/images/Cert/LVA-Yug.jpg' },
+  { title: 'HappyFox Hackathon', issuer: 'HappyFox', date: 'July 24 & 25, 2025', url: '/assets/images/Cert/HappyFox.jpg', image: '/assets/images/Cert/HappyFox.jpg' },
+  { title: 'Cloud Radar System', issuer: 'KCT-KCIRI-Ezon', date: 'Apr, 2025', url: '/assets/images/Cert/PC-CRS.jpg', image: '/assets/images/Cert/PC-CRS.jpg' },
+  { title: 'Autonomous Mobile Robot', issuer: 'Forge Innovation & Ventures', date: 'Jan, 2025', url: '/assets/images/Cert/Protosem.jpg', image: '/assets/images/Cert/Protosem.jpg' },
+  { title: 'Dept Recognition Award - Best Volunteer', issuer: 'KI-Dept of AI & DS', date: 'Apr, 2026', url: '/assets/images/Cert/DRA-BV.jpg', image: '/assets/images/Cert/DRA-BV.jpg' },
+  { title: 'Web Development', issuer: 'Udemy', date: 'May 31, 2024', url: 'https://www.udemy.com/certificate/UC-15189e34-4140-4159-b9b7-7cae09ffb38a/', image: '/assets/images/Cert/Web-dev.jpeg' },
+  { title: 'Data Science with Python', issuer: 'Great Learning', date: 'Apr, 2023', url: 'https://olympus.mygreatlearning.com/courses/11265/certificate?pb_id=581', image: '/assets/images/Cert/GL-DS.jpg' },
+  { title: 'ROS2 For Beginners', issuer: 'Udemy', date: 'Mar 26, 2024', url: 'https://www.udemy.com/certificate/UC-f4085bee-232c-4f12-b8a8-1d3e5ad43201/', image: '/assets/images/Cert/ROS2.jpeg' },
+  { title: 'Wise-AI-Thon-2024', issuer: 'KSI', date: 'Sep 10 & 11, 2024', url: '/assets/images/Cert/WiseAiThon-24.jpg', image: '/assets/images/Cert/WiseAiThon-24.jpg' },
+  { title: 'Terra Nova Hackathon', issuer: 'KCT-IEEE', date: 'May 24, 2024', url: '/assets/images/Cert/Terra-Nova.jpeg', image: '/assets/images/Cert/Terra-Nova.jpeg' },
+  { title: 'SIHH-2023 Volunteering', issuer: 'Forge Innovation & Ventures-SIH', date: 'Dec, 2023', url: '/assets/images/Cert/SIH-2023.jpg', image: '/assets/images/Cert/SIH-2023.jpg' },
+  { title: 'SIHH-2024 Volunteering', issuer: 'Forge Innovation & Ventures-SIH', date: 'Dec, 2024', url: '/assets/images/Cert/SIH-2024.jpg', image: '/assets/images/Cert/SIH-2024.jpg' },
+  { title: 'Robotics and Drones Workshop', issuer: 'KSI-Entudio', date: 'Apr 4, 5 & 6, 2024', url: '/assets/images/Cert/Robotics&Drones.jpg', image: '/assets/images/Cert/Robotics&Drones.jpg' },
+  { title: 'ML Engineer Intern', issuer: 'Codsoft', date: 'May 5 to June 5, 2024', url: '/assets/images/Cert/Codsoft.png', image: '/assets/images/Cert/Codsoft.png' },
+  { title: 'Gen AI - Hands on with Transformers', issuer: 'KCT-Dept of AI & DS', date: 'May 7, 2024', url: '/assets/images/Cert/Gen-AI.jpeg', image: '/assets/images/Cert/Gen-AI.jpeg' },
+  { title: 'Python Programming Advanced', issuer: 'Infosys', date: 'Nov 27, 2023', url: '/assets/images/Cert/Infosys.jpg', image: '/assets/images/Cert/Infosys.jpg' },
 ]
 
 // ============================================
