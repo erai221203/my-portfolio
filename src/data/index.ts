@@ -262,6 +262,8 @@ export const projectImages = {
 
 // Certificate Images (place in /public/assets/images/Cert/)
 export const certificateImages = {
+  agile: '/assets/images/Cert/Agile.jpeg',
+  owasp: '/assets/images/Cert/Owasp.jpeg',
   lvaYug: '/assets/images/Cert/LVA-Yug.jpg',
   rpCrs: '/assets/images/Cert/RP-CRS.jpg',
   happyFox: '/assets/images/Cert/HappyFox.jpg',
