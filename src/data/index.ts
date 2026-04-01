@@ -1,4 +1,4 @@
-import { Project, Skill, SocialLink, NavItem, Experience, Education, Service, Certificate, Client } from '../types'
+import { Project, Skill, SocialLink, NavItem, Experience, Education, Certificate, Client } from '../types'
 
 export const navItems: NavItem[] = [
   { label: 'Home', href: '#home' },
@@ -175,15 +175,6 @@ export const personalInfo = {
   contactFormUrl: 'https://forms.gle/t1jQAbFXAj43Yd3B6',
 }
 
-export const services: Service[] = [
-  { title: 'ML Model & CV', description: 'Developing the Machine learning model for the testimonials and also the CV models.', icon: 'cv' },
-  { title: 'RPA Automation', description: 'Automate the softwares using UIPath Studio.', icon: 'automate' },
-  { title: 'UI/UX Design', description: 'The most modern and high-quality design made at a intermediate level on figma as required.', icon: 'uiux' },
-  { title: 'Front End Web Development', description: 'Best development of websites at the intermediate level.', icon: 'dev' },
-  { title: 'CAD Model Designing', description: 'I have professional expertise in 2D CAD design using AutoCAD and intermediate proficiency in 3D design using Fusion 360.', icon: 'cad' },
-  { title: 'Photography', description: 'Passionate about photography and videography, with hands-on experience in digital and social media marketing for my college department.', icon: 'camera' },
-]
-
 export const experience: Experience[] = [
   { title: 'Quality Assurance Intelligence Intern', company: 'Stats Perform, Bengaluru, India', period: 'Oct 2025 — Present', description: 'Quality Assurance Team.' },
   { title: 'Vice President', company: 'Department of AI & Data Science, KCT', period: 'Aug 2025 — Present', description: 'Leading department association initiatives and activities.' },
@@ -211,30 +202,32 @@ export const clients: Client[] = [
 ]
 
 export const certificates: Certificate[] = [
-  { title: 'Leadership and Volunteerism Award - Yugam', issuer: 'KI', date: 'March, 2026', url: '/assets/images/Cert/LVA-Yug.jpg', image: '/assets/images/Cert/LVA-Yug.jpg' },
+  { title: 'Leadership and Volunteerism Award - Yugam', issuer: 'KI', date: 'March, 2026', url: '/assets/pdf_cert/LVA-Yug.pdf', fileName: 'LVA-Yug.pdf', image: '/assets/images/Cert/LVA-Yug.jpg', category: 'award' },
 
-  { title: 'Agile Fundamentals : Including Scrum & Kanban', issuer: 'Udemy', date: 'Oct, 2025', url: '/assets/images/Cert/Agile.jpeg', image: '/assets/images/Cert/Agile.jpeg' },
-  { title: 'The OWASP Top 10 - Deep Dive', issuer: 'Udemy', date: 'Oct, 2025', url: '/assets/images/Cert/Owasp.jpeg', image: '/assets/images/Cert/Owasp.jpeg' },
-  { title: 'AI-Driven Solar Panel Optimization during Cloudy times Using Real-Time Image Processing', issuer: 'IEEE', date: 'Aug, 2025', url: '/assets/images/Cert/RP-CRS.jpg', image: '/assets/images/Cert/RP-CRS.jpg' },
-  { title: 'HappyFox Hackathon', issuer: 'HappyFox', date: 'July, 2025', url: '/assets/images/Cert/HappyFox.jpg', image: '/assets/images/Cert/HappyFox.jpg' },
-  { title: 'Cloud Radar System', issuer: 'KCT-KCIRI-Ezon', date: 'Apr, 2025', url: '/assets/images/Cert/PC-CRS.jpg', image: '/assets/images/Cert/PC-CRS.jpg' },
-  { title: 'Dept Recognition Award - Best Volunteer', issuer: 'KI-Dept of AI & DS', date: 'Apr, 2025', url: '/assets/images/Cert/DRA-BV.jpg', image: '/assets/images/Cert/DRA-BV.jpg' },
-  { title: 'Sustainathon - 25', issuer: 'KSI', date: 'Jan, 2025', url: '/assets/images/Cert/Sustainathon-25.jpg', image: '/assets/images/Cert/Sustainathon-25.jpg' },
-  { title: 'Autonomous Mobile Robot', issuer: 'Forge Innovation & Ventures', date: 'Jan, 2025', url: '/assets/images/Cert/Protosem.jpg', image: '/assets/images/Cert/Protosem.jpg' },
+  { title: 'Agile Fundamentals : Including Scrum & Kanban', issuer: 'Udemy', date: 'Oct, 2025', url: '/assets/pdf_cert/agile.pdf', fileName: 'agile.pdf', image: '/assets/images/Cert/Agile.jpeg', category: 'online' },
+  { title: 'The OWASP Top 10 - Deep Dive', issuer: 'Udemy', date: 'Oct, 2025', url: '/assets/pdf_cert/OWASP.pdf', fileName: 'OWASP.pdf', image: '/assets/images/Cert/Owasp.jpeg', category: 'online' },
+  { title: 'AI-Driven Solar Panel Optimization during Cloudy times Using Real-Time Image Processing', issuer: 'IEEE', date: 'Aug, 2025', url: '/assets/pdf_cert/RP_CRS.pdf', fileName: 'RP_CRS.pdf', image: '/assets/images/Cert/RP-CRS.jpg', category: 'publication' },
+  { title: 'HappyFox Hackathon', issuer: 'HappyFox', date: 'July, 2025', url: '/assets/pdf_cert/HappyFox.pdf', fileName: 'HappyFox.pdf', image: '/assets/images/Cert/HappyFox.jpg', category: 'hackathon' },
+  { title: 'Cloud Radar System', issuer: 'KCT-KCIRI-Ezon', date: 'Apr, 2025', url: '/assets/pdf_cert/PC-CRS.pdf', fileName: 'PC-CRS.pdf', image: '/assets/images/Cert/PC-CRS.jpg', category: 'award' },
+  { title: 'Dept Recognition Award - Best Volunteer', issuer: 'KI-Dept of AI & DS', date: 'Apr, 2025', url: '/assets/pdf_cert/DRA-BV.pdf', fileName: 'DRA-BV.pdf', image: '/assets/images/Cert/DRA-BV.jpg', category: 'award' },
+  { title: 'Sustainathon - 25', issuer: 'KSI', date: 'Jan, 2025', url: '/assets/pdf_cert/Sustainathon-25.pdf', fileName: 'Sustainathon-25.pdf', image: '/assets/images/Cert/Sustainathon-25.jpg', category: 'hackathon' },
+  { title: 'Autonomous Mobile Robot', issuer: 'Forge Innovation & Ventures', date: 'Jan, 2025', url: '/assets/pdf_cert/Protosem.pdf', fileName: 'Protosem.pdf', image: '/assets/images/Cert/Protosem.jpg', category: 'online' },
 
-  { title: 'SIHH-2024 Volunteering', issuer: 'Forge Innovation & Ventures-SIH', date: 'Dec, 2024', url: '/assets/images/Cert/SIH-2024.jpg', image: '/assets/images/Cert/SIH-2024.jpg' },
-  { title: 'Artistic Fusion : AI Powered Artisty for Story Boarding', issuer: 'IEEE', date: 'Oct, 2024', url: '/assets/images/Cert/RP-Story.jpg', image: '/assets/images/Cert/RP-Story.jpg' },
-  { title: 'Wise-AI-Thon-2024', issuer: 'KSI', date: 'Sep, 2024', url: '/assets/images/Cert/WiseAiThon-24.jpg', image: '/assets/images/Cert/WiseAiThon-24.jpg' },
-  { title: 'Web Development', issuer: 'Udemy', date: 'May, 2024', url: '/assets/images/Cert/Web-dev.jpeg', image: '/assets/images/Cert/Web-dev.jpeg' },
-  { title: 'Terra Nova Hackathon', issuer: 'KCT-IEEE', date: 'May, 2024', url: '/assets/images/Cert/Terra-Nova.jpeg', image: '/assets/images/Cert/Terra-Nova.jpeg' },
-  { title: 'Gen AI - Hands on with Transformers', issuer: 'KCT-Dept of AI & DS', date: 'May, 2024', url: '/assets/images/Cert/Gen-AI.jpeg', image: '/assets/images/Cert/Gen-AI.jpeg' },
-  { title: 'ML Engineer Intern', issuer: 'Codsoft', date: 'May to June, 2024', url: '/assets/images/Cert/Codsoft.png', image: '/assets/images/Cert/Codsoft.png' },
-  { title: 'Robotics and Drones Workshop', issuer: 'KSI-Entudio', date: 'Apr, 2024', url: '/assets/images/Cert/Robotics&Drones.jpg', image: '/assets/images/Cert/Robotics&Drones.jpg' },
-  { title: 'ROS2 For Beginners', issuer: 'Udemy', date: 'Mar, 2024', url: '/assets/images/Cert/ROS2.jpeg', image: '/assets/images/Cert/ROS2.jpeg' },
+  { title: 'SIHH-2024 Volunteering', issuer: 'Forge Innovation & Ventures-SIH', date: 'Dec, 2024', url: '/assets/pdf_cert/SIH-2024.pdf', fileName: 'SIH-2024.pdf', image: '/assets/images/Cert/SIH-2024.jpg', category: 'award' },
+  { title: 'Artistic Fusion : AI Powered Artisty for Story Boarding', issuer: 'IEEE', date: 'Oct, 2024', url: '/assets/pdf_cert/RP_Storyboard.pdf', fileName: 'RP_Storyboard.pdf', image: '/assets/images/Cert/RP-Story.jpg', category: 'publication' },
+  { title: 'Wise-AI-Thon-2024', issuer: 'KSI', date: 'Sep, 2024', url: '/assets/pdf_cert/WiseAiThon-24.pdf', fileName: 'WiseAiThon-24.pdf', image: '/assets/images/Cert/WiseAiThon-24.jpg', category: 'hackathon' },
+  { title: 'Web Development', issuer: 'Udemy', date: 'May, 2024', url: '/assets/pdf_cert/Web-dev.pdf', fileName: 'Web-dev.pdf', image: '/assets/images/Cert/Web-dev.jpeg', category: 'online' },
+  { title: 'Terra Nova Hackathon', issuer: 'KCT-IEEE', date: 'May, 2024', url: '/assets/pdf_cert/Terra-Nova.pdf', fileName: 'Terra-Nova.pdf', image: '/assets/images/Cert/Terra-Nova.jpeg', category: 'hackathon' },
+  { title: 'Gen AI - Hands on with Transformers', issuer: 'KCT-Dept of AI & DS', date: 'May, 2024', url: '/assets/pdf_cert/Gen-AI.pdf', fileName: 'Gen-AI.pdf', image: '/assets/images/Cert/Gen-AI.jpeg', category: 'workshop' },
+  { title: 'ML Engineer Intern', issuer: 'Codsoft', date: 'May to June, 2024', url: '/assets/pdf_cert/Codsoft.pdf', fileName: 'Codsoft.pdf', image: '/assets/images/Cert/Codsoft.png', category: 'online' },
+  { title: 'Robotics and Drones Workshop', issuer: 'KSI-Entudio', date: 'Apr, 2024', url: '/assets/pdf_cert/Robotics&Drones.pdf', fileName: 'Robotics&Drones.pdf', image: '/assets/images/Cert/Robotics&Drones.jpg', category: 'workshop' },
+  { title: 'ROS2 For Beginners', issuer: 'Udemy', date: 'Mar, 2024', url: '/assets/pdf_cert/ROS2.pdf', fileName: 'ROS2.pdf', image: '/assets/images/Cert/ROS2.jpeg', category: 'online' },
 
-  { title: 'SIHH-2023 Volunteering', issuer: 'Forge Innovation & Ventures-SIH', date: 'Dec, 2023', url: '/assets/images/Cert/SIH-2023.jpg', image: '/assets/images/Cert/SIH-2023.jpg' },
-  { title: 'Python Programming Advanced', issuer: 'Infosys', date: 'Nov, 2023', url: '/assets/images/Cert/Infosys.jpg', image: '/assets/images/Cert/Infosys.jpg' },
-  { title: 'Data Science with Python', issuer: 'Great Learning', date: 'Apr, 2023', url: '/assets/images/Cert/GL-DS.jpg', image: '/assets/images/Cert/GL-DS.jpg' }
+  { title: 'SIHH-2023 Volunteering', issuer: 'Forge Innovation & Ventures-SIH', date: 'Dec, 2023', url: '/assets/pdf_cert/SIH-2023.pdf', fileName: 'SIH-2023.pdf', image: '/assets/images/Cert/SIH-2023.jpg', category: 'award' },
+  { title: 'Python Programming Advanced', issuer: 'Infosys', date: 'Nov, 2023', url: '/assets/pdf_cert/Infosys.pdf', fileName: 'Infosys.pdf', image: '/assets/images/Cert/Infosys.jpg', category: 'online' },
+  { title: 'Data Science with Python', issuer: 'Great Learning', date: 'Apr, 2023', url: '/assets/pdf_cert/GL-DS.pdf', fileName: 'GL-DS.pdf', image: '/assets/images/Cert/GL-DS.jpg', category: 'online' },
+  { title: 'AI Creation Studio', issuer: 'KCT - Yugam', date: 'Mar, 2023', url: '/assets/pdf_cert/AI_Creation_Studio.pdf', fileName: 'AI_Creation_Studio.pdf', image: '/assets/images/Cert/AI_Creation_Studio.png', category: 'workshop' }
+
 ]
 
 // ============================================
@@ -302,3 +295,237 @@ export const serviceIcons = {
   cad: '/assets/images/logo/cad.svg',
   camera: '/assets/images/logo/camera.svg',
 }
+
+// Section-specific display content
+export const aboutSectionData = {
+  title: 'About Me',
+  interests: ['Machine Learning', 'Computer Vision', 'Robotics', 'Photography', 'Chess', 'DJing'],
+  stats: {
+    projectsCompleted: '15+ Completed',
+    fallbackStatus: 'Professional',
+  },
+  labels: {
+    location: 'Location',
+    email: 'Email',
+    status: 'Status',
+    projects: 'Projects',
+    education: 'Education',
+    experience: 'Experience',
+  },
+}
+
+export const heroSectionData = {
+  availabilityText: 'Available for opportunities',
+  roles: ['QA Intelligence Intern'],
+  description: {
+    line1: 'I craft exceptional digital experiences with clean code and creative solutions.',
+    line2: 'Passionate about building products that make a difference.',
+  },
+  stats: [
+    { value: '2+', label: 'Years Experience' },
+    { value: '15+', label: 'Projects Completed' },
+    { value: '5+', label: 'Happy Clients' },
+  ],
+  cta: {
+    primary: "Let's Talk",
+    secondary: 'Download CV',
+  },
+}
+
+export const skillsCategoryTabs = [
+  { id: 'all', label: 'All Skills' },
+  { id: 'tech', label: 'Tech Skills' },
+  { id: 'programming', label: 'Programming' },
+  { id: 'soft', label: 'Soft Skills' },
+  { id: 'hard', label: 'Hard Skills' },
+]
+
+// ============================================
+// 🎯 CENTRALIZED PORTFOLIO DATA OBJECT
+// ============================================
+// This is the SINGLE SOURCE OF TRUTH for all portfolio data
+// All components import data from this file ONLY
+// No external APIs, databases, or other data sources are used
+// ============================================
+
+/**
+ * Complete Portfolio Data Object
+ * 
+ * This object contains all data needed for the portfolio website.
+ * It serves as the single source of truth for:
+ * - Navigation
+ * - Personal information
+ * - Skills (organized by category)
+ * - Projects
+ * - Certificates
+ * - Experience
+ * - Education
+ * - Services offered
+ * - Client information
+ * - Asset references (images, icons)
+ * 
+ * @example
+ * ```typescript
+ * import { portfolioData } from '@/data'
+ * 
+ * // Access personal info
+ * console.log(portfolioData.personal.name)
+ * 
+ * // Access all skills
+ * console.log(portfolioData.skills)
+ * 
+ * // Access projects
+ * console.log(portfolioData.projects)
+ * ```
+ */
+export const portfolioData = {
+  // Navigation & Branding
+  navigation: {
+    items: navItems,
+    personalBrand: {
+      name: personalInfo.name,
+      title: personalInfo.title,
+      logo: profileImages.avatar,
+    },
+  },
+
+  // Personal Information
+  personal: personalInfo,
+
+  // Contact & Social
+  social: {
+    links: socialLinks,
+    contact: {
+      email: personalInfo.email,
+      phone: personalInfo.phone,
+      location: personalInfo.location,
+    },
+    urls: {
+      resume: personalInfo.resumeUrl,
+      contactForm: personalInfo.contactFormUrl,
+      map: personalInfo.mapUrl,
+    },
+  },
+
+  // Skills by Category
+  skills: {
+    tech: techSkills,
+    programming: programmingSkills,
+    soft: softSkills,
+    hard: hardSkills,
+    combined: skills, // All skills merged
+    all: [...techSkills, ...programmingSkills, ...softSkills, ...hardSkills], // Complete list
+  },
+
+  // Section UI Content
+  sectionContent: {
+    about: aboutSectionData,
+    hero: heroSectionData,
+    skillsTabs: skillsCategoryTabs,
+  },
+
+  // Projects Portfolio
+  projects: projects,
+
+  // Professional Experience
+  career: {
+    experience: experience,
+    education: education,
+  },
+
+  // Clients & Collaborations
+  clients: clients,
+
+  // Achievements
+  achievements: {
+    certificates: certificates,
+  },
+
+  // Asset References (Centralized)
+  assets: {
+    images: {
+      profile: profileImages,
+      projects: projectImages,
+      certificates: certificateImages,
+      clients: clientImages,
+    },
+    icons: {
+      services: serviceIcons,
+    },
+  },
+}
+
+/**
+ * Data Validation Helper
+ * Ensures that the portfolio data structure is complete
+ * 
+ * @returns {object} Validation report with status and details
+ * 
+ * @example
+ * ```typescript
+ * const validation = validatePortfolioData()
+ * if (validation.isValid) {
+ *   console.log('All data is valid!')
+ * } else {
+ *   console.warn('Issues found:', validation.issues)
+ * }
+ * ```
+ */
+export const validatePortfolioData = () => {
+  const report = {
+    isValid: true,
+    issues: [] as string[],
+    summary: {
+      totalProjects: projects.length,
+      totalCertificates: certificates.length,
+      totalSkills: skills.length,
+      totalExperience: experience.length,
+      totalEducation: education.length,
+      socialLinks: socialLinks.length,
+    },
+  }
+
+  // Check required fields
+  if (!personalInfo.name) report.issues.push('Personal name is missing')
+  if (!personalInfo.email) report.issues.push('Personal email is missing')
+  if (!personalInfo.location) report.issues.push('Personal location is missing')
+  if (projects.length === 0) report.issues.push('No projects found')
+  if (skills.length === 0) report.issues.push('No skills found')
+  if (socialLinks.length === 0) report.issues.push('No social links found')
+
+  report.isValid = report.issues.length === 0
+
+  return report
+}
+
+/**
+ * Get all data as a flat object for easy access
+ * Useful for debugging and inspecting data structure
+ * 
+ * @returns {object} Flat object containing all portfolio data
+ */
+export const getAllPortfolioData = () => ({
+  personal: personalInfo,
+  navigation: navItems,
+  social: socialLinks,
+  techSkills,
+  programmingSkills,
+  softSkills,
+  hardSkills,
+  allSkills: skills,
+  projects,
+  experience,
+  education,
+  clients,
+  certificates,
+  aboutSectionData,
+  heroSectionData,
+  skillsCategoryTabs,
+  assets: {
+    profileImages,
+    projectImages,
+    certificateImages,
+    clientImages,
+    serviceIcons,
+  },
+})

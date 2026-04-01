@@ -1,12 +1,22 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiExternalLink, FiAward, FiX, FiZoomIn } from 'react-icons/fi'
+import { FiExternalLink, FiAward, FiX, FiZoomIn, FiFilter } from 'react-icons/fi'
 import { certificates } from '../../data'
 import { Certificate } from '../../types'
 import styles from './Certificates.module.css'
 
+type CertificateCategory = 'online' | 'workshop' | 'award' | 'publication' | 'hackathon' | 'all'
+
+interface CategoryGroup {
+  id: CertificateCategory
+  label: string
+  icon: string
+  count: number
+}
+
 function Certificates() {
   const [selectedCert, setSelectedCert] = useState<Certificate | null>(null)
+  const [activeCategory, setActiveCategory] = useState<CertificateCategory>('all')
 
   const openPreview = (cert: Certificate) => {
     setSelectedCert(cert)
@@ -18,10 +28,37 @@ function Certificates() {
     document.body.style.overflow = ''
   }
 
-  // Check if URL is external (not a local image)
+  // Check if URL is external HTTP/HTTPS link
   const isExternalUrl = (url: string) => {
     return url.startsWith('http://') || url.startsWith('https://')
   }
+
+  // Check if URL is a PDF file
+  const isPdfUrl = (url: string) => {
+    return url.toLowerCase().endsWith('.pdf')
+  }
+
+  // Handle certificate link - open PDF in new tab
+  const handleCertificateLink = (url: string) => {
+    if (isPdfUrl(url) || isExternalUrl(url)) {
+      window.open(url, '_blank')
+    }
+  }
+
+  // Simple filtering logic - exactly like Skills section
+  const filteredCerts = activeCategory === 'all'
+    ? certificates
+    : certificates.filter(cert => cert.category === activeCategory)
+
+  // Build categories array with counts
+  const categories: CategoryGroup[] = [
+    { id: 'all', label: 'All Certificates', icon: '📜', count: certificates.length },
+    { id: 'online', label: 'Online Courses', icon: '🎓', count: certificates.filter(c => c.category === 'online').length },
+    { id: 'workshop', label: 'Workshops', icon: '🛠️', count: certificates.filter(c => c.category === 'workshop').length },
+    { id: 'award', label: 'Awards', icon: '🏆', count: certificates.filter(c => c.category === 'award').length },
+    { id: 'publication', label: 'Publications', icon: '📄', count: certificates.filter(c => c.category === 'publication').length },
+    { id: 'hackathon', label: 'Hackathons', icon: '⚡', count: certificates.filter(c => c.category === 'hackathon').length },
+  ]
 
   return (
     <section id="cert" className={`section ${styles.certificates}`}>
@@ -38,18 +75,48 @@ function Certificates() {
           </p>
         </motion.div>
 
+        {/* Category Filter */}
+        <motion.div
+          className={styles.categoryFilter}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className={styles.filterHeader}>
+            <FiFilter size={20} />
+            <span>Filter by Category</span>
+          </div>
+          <div className={styles.categoryTabs}>
+            {categories.map(cat => (
+              <motion.button
+                key={cat.id}
+                className={`${styles.categoryTab} ${activeCategory === cat.id ? styles.active : ''}`}
+                onClick={() => setActiveCategory(cat.id)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className={styles.icon}>{cat.icon}</span>
+                <div className={styles.tabContent}>
+                  <span className={styles.label}>{cat.label}</span>
+                  <span className={styles.count}>{cat.count}</span>
+                </div>
+              </motion.button>
+            ))}
+          </div>
+        </motion.div>
+
         <motion.div
           className={styles.certificatesGrid}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           variants={{
             visible: { transition: { staggerChildren: 0.08 } },
           }}
         >
-          {certificates.map((cert, index) => (
+          {filteredCerts.map((cert) => (
             <motion.div
-              key={index}
+              key={cert.title}
               className={styles.certCard}
               variants={{
                 hidden: { opacity: 0, y: 30 },
@@ -142,16 +209,14 @@ function Certificates() {
                   <span className={styles.modalDot}>•</span>
                   <time>{selectedCert.date}</time>
                 </div>
-                {isExternalUrl(selectedCert.url) && (
-                  <a
-                    href={selectedCert.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                {(isPdfUrl(selectedCert.url) || isExternalUrl(selectedCert.url)) && (
+                  <button
+                    onClick={() => handleCertificateLink(selectedCert.url)}
                     className={styles.modalLink}
                   >
                     <FiExternalLink size={18} />
-                    <span>View Original Certificate</span>
-                  </a>
+                    <span>{isPdfUrl(selectedCert.url) ? 'View PDF Certificate' : 'View Original Certificate'}</span>
+                  </button>
                 )}
               </div>
             </motion.div>

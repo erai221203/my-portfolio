@@ -10,7 +10,7 @@ import {
   SiTypescript, SiJavascript, SiNextdotjs, SiPostgresql, SiMongodb, SiTensorflow, SiOpencv,
   SiPandas, SiPlotly, SiOpenai, SiAutodesk, SiStreamlit, SiFastapi, SiGooglecloud, SiMysql, SiR
 } from 'react-icons/si'
-import { techSkills, programmingSkills, softSkills, hardSkills } from '../../data'
+import { techSkills, programmingSkills, softSkills, hardSkills, skillsCategoryTabs } from '../../data'
 import styles from './Skills.module.css'
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -52,14 +52,6 @@ const iconMap: Record<string, React.ReactNode> = {
   FaPuzzlePiece: <FaPuzzlePiece />,
   SiMicrosoftexcel: <FaFilePowerpoint />,
 }
-
-const categories = [
-  { id: 'all', label: 'All Skills' },
-  { id: 'tech', label: 'Tech Skills' },
-  { id: 'programming', label: 'Programming' },
-  { id: 'soft', label: 'Soft Skills' },
-  { id: 'hard', label: 'Hard Skills' },
-]
 
 const allSkills = [...techSkills, ...programmingSkills, ...softSkills, ...hardSkills]
 
@@ -127,7 +119,7 @@ function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          {categories.map((category) => (
+          {skillsCategoryTabs.map((category) => (
             <motion.button
               key={category.id}
               className={`${styles.categoryTab} ${activeCategory === category.id ? styles.active : ''}`}

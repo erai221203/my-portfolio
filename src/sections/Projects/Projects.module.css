@@ -4,26 +4,180 @@
 
 .projectsHeader {
   text-align: center;
+  margin-bottom: var(--spacing-2xl);
 }
+
+.sectionSubtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  padding-bottom: var(--spacing-md);
+}
+
+.sectionSubtitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+/* =============================================
+   FEATURED PROJECTS - LARGE FORMAT
+   ============================================= */
+
+.featuredSection {
+  margin-bottom: var(--spacing-3xl);
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-2xl);
+}
+
+.featuredCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  padding: var(--spacing-lg);
+  position: relative;
+}
+
+.featuredCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.featuredCard:hover::before {
+  opacity: 1;
+}
+
+.featuredCard:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-2xl);
+}
+
+.cardRight {
+  grid-template-columns: 1fr 1fr;
+}
+
+.cardRight .projectImage {
+  order: 2;
+}
+
+.cardRight .projectContent {
+  order: 1;
+}
+
+.cardLeft .projectImage {
+  order: 1;
+}
+
+.cardLeft .projectContent {
+  order: 2;
+}
+
+.featuredCard .projectImage {
+  height: 300px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.featuredCard .projectContent {
+  padding: var(--spacing-lg);
+}
+
+.featuredCard .projectTitle {
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.featuredCard .projectDescription {
+  font-size: 1rem;
+  line-height: 1.8;
+  -webkit-line-clamp: none;
+  line-clamp: none;
+  margin-bottom: var(--spacing-lg);
+}
+
+.featuredBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-xs);
+}
+
+/* =============================================
+   REGULAR PROJECTS - COMPACT GRID FORMAT
+   ============================================= */
 
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--spacing-lg);
 }
 
-.projectCard {
+.compactCard {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   overflow: hidden;
   transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.projectCard:hover {
+.compactCard:hover {
   border-color: var(--color-primary);
-  box-shadow: var(--shadow-xl);
-  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+}
+
+.compactCard .projectImage {
+  height: 180px;
+  flex-shrink: 0;
+}
+
+/* =============================================
+   SHARED CARD STYLES
+   ============================================= */
+
+.projectCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
 }
 
 .projectImage {
@@ -33,31 +187,28 @@
   overflow: hidden;
 }
 
-.projectImagePlaceholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  font-size: 3rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-
 .projectImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.projectCard:hover .projectImg {
+  transform: scale(1.05);
 }
 
 .projectOverlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-md);
   opacity: 0;
   transition: opacity var(--transition-base);
+  backdrop-filter: blur(4px);
 }
 
 .projectCard:hover .projectOverlay {
@@ -68,42 +219,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: var(--radius-full);
   background: white;
   color: var(--color-primary);
   transition: all var(--transition-fast);
+  font-weight: 600;
 }
 
 .overlayLink:hover {
   background: var(--color-primary);
   color: white;
-  transform: scale(1.1);
+  transform: scale(1.15) rotate(5deg);
 }
 
 .projectContent {
   padding: var(--spacing-lg);
-}
-
-.featuredBadge {
-  display: inline-block;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-primary);
-  background: rgba(99, 102, 241, 0.1);
-  border-radius: var(--radius-sm);
-  margin-bottom: var(--spacing-sm);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .projectTitle {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-text);
   margin-bottom: var(--spacing-sm);
+  line-height: 1.3;
 }
 
 .projectDescription {
@@ -116,30 +259,97 @@
   line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  flex-grow: 1;
+}
+
+.projectMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  font-size: 0.85rem;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-text-secondary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-background-secondary);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.metaItem:hover {
+  color: var(--color-primary);
+  background: rgba(99, 102, 241, 0.1);
 }
 
 .projectTech {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-xs);
+  margin-top: auto;
 }
 
 .techTag {
-  padding: var(--spacing-xs) var(--spacing-sm);
+  padding: 4px 10px;
   font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  background: var(--color-background-secondary);
-  border-radius: var(--radius-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.techTag:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: var(--color-primary);
+}
+
+/* =============================================
+   RESPONSIVE DESIGN
+   ============================================= */
+
+@media (max-width: 1200px) {
+  .featuredCard {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-md);
+  }
+
+  .cardRight .projectImage,
+  .cardLeft .projectImage {
+    order: 0;
+  }
+
+  .cardRight .projectContent,
+  .cardLeft .projectContent {
+    order: 0;
+  }
+
+  .featuredCard .projectImage {
+    height: 250px;
+  }
+
+  .featuredCard .projectTitle {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 992px) {
   .projectsGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
   }
   
-  .projectImage {
-    height: 180px;
+  .compactCard .projectImage {
+    height: 160px;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.3rem;
   }
 }
 
@@ -148,9 +358,21 @@
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
-  
+
+  .featuredGrid {
+    gap: var(--spacing-lg);
+  }
+
   .projectImage {
     height: 150px;
+  }
+
+  .compactCard .projectImage {
+    height: 140px;
+  }
+
+  .featuredCard .projectImage {
+    height: 200px;
   }
   
   .projectCard {
@@ -168,6 +390,10 @@
   .techTag {
     font-size: 0.7rem;
   }
+
+  .sectionSubtitle {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -179,6 +405,18 @@
   .projectImage {
     height: 120px;
   }
+
+  .compactCard .projectImage {
+    height: 120px;
+  }
+
+  .featuredCard {
+    padding: var(--spacing-sm);
+  }
+
+  .featuredCard .projectImage {
+    height: 160px;
+  }
   
   .projectTitle {
     font-size: 1rem;
@@ -189,11 +427,8 @@
     font-size: 0.8rem;
     line-height: 1.5;
     margin-bottom: var(--spacing-sm);
-  }
-  
-  .featuredBadge {
-    font-size: 0.65rem;
-    padding: var(--spacing-xs) var(--spacing-xs);
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
   
   .techTag {
@@ -203,5 +438,28 @@
   
   .projectContent {
     padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .projectMeta {
+    gap: var(--spacing-sm);
+  }
+
+  .metaItem {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+  }
+
+  .overlayLink {
+    width: 40px;
+    height: 40px;
+  }
+
+  .overlayLink svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
   }
 }

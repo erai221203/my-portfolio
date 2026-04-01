@@ -13,7 +13,7 @@ const CertificatesPage = lazy(() => import('./pages/CertificatesPage/Certificate
 
 function App() {
   return (
-    <Router>
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <div className="app">
         <Navbar />
         <main>

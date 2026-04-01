@@ -23,7 +23,7 @@ build/
 *.swp
 *.swo
 *~
-
+.vite
 # OS files
 .DS_Store
 Thumbs.db

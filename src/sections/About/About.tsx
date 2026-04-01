@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
-import { FiBook, FiBriefcase, FiMapPin, FiMail, FiAward, FiUser } from 'react-icons/fi'
+import { FiBook, FiBriefcase, FiMapPin, FiMail, FiAward, FiUser, FiLink } from 'react-icons/fi'
 import styles from './About.module.css'
-import { personalInfo, education as educationData, experience as experienceData } from '../../data'
+import { personalInfo, education as educationData, experience as experienceData, aboutSectionData, clients } from '../../data'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -20,8 +20,6 @@ const staggerContainer = {
   },
 }
 
-const interests = ['Machine Learning', 'Computer Vision', 'Robotics', 'Photography', 'Chess', 'DJing']
-
 function About() {
   return (
     <section id="about" className={`section ${styles.about}`}>
@@ -36,12 +34,12 @@ function About() {
         >
           <motion.div className={styles.introHeader} variants={fadeInUp}>
             <FiUser className={styles.introIcon} />
-            <h2 className={styles.introTitle}>About Me</h2>
+            <h2 className={styles.introTitle}>{aboutSectionData.title}</h2>
           </motion.div>
 
           <motion.div className={styles.introContent} variants={fadeInUp}>
             <p className={styles.introText}>
-              Hello! I'm <span className={styles.highlight}>{personalInfo.name}</span>, based in {personalInfo.location}. 
+              Hello! I'm <span className={styles.highlight}>{personalInfo.name}</span>, located in {personalInfo.location}. 
               {personalInfo.bio}
             </p>
             <p className={styles.introText}>
@@ -57,36 +55,36 @@ function About() {
             <div className={styles.infoCard}>
               <FiMapPin className={styles.infoIcon} />
               <div className={styles.infoContent}>
-                <span className={styles.infoLabel}>Location</span>
+                <span className={styles.infoLabel}>{aboutSectionData.labels.location}</span>
                 <span className={styles.infoValue}>{personalInfo.location}</span>
               </div>
             </div>
             <div className={styles.infoCard}>
               <FiMail className={styles.infoIcon} />
               <div className={styles.infoContent}>
-                <span className={styles.infoLabel}>Email</span>
+                <span className={styles.infoLabel}>{aboutSectionData.labels.email}</span>
                 <span className={styles.infoValue}>{personalInfo.email}</span>
               </div>
             </div>
             <div className={styles.infoCard}>
               <FiBriefcase className={styles.infoIcon} />
               <div className={styles.infoContent}>
-                <span className={styles.infoLabel}>Status</span>
-                <span className={styles.infoValue}>{experienceData[0]?.title || 'Professional'}</span>
+                <span className={styles.infoLabel}>{aboutSectionData.labels.status}</span>
+                <span className={styles.infoValue}>{experienceData[0]?.title || aboutSectionData.stats.fallbackStatus}</span>
               </div>
             </div>
             <div className={styles.infoCard}>
               <FiAward className={styles.infoIcon} />
               <div className={styles.infoContent}>
-                <span className={styles.infoLabel}>Projects</span>
-                <span className={styles.infoValue}>15+ Completed</span>
+                <span className={styles.infoLabel}>{aboutSectionData.labels.projects}</span>
+                <span className={styles.infoValue}>{aboutSectionData.stats.projectsCompleted}</span>
               </div>
             </div>
           </motion.div>
 
           {/* Interests */}
           <motion.div className={styles.interests} variants={fadeInUp}>
-            {interests.map((interest) => (
+            {aboutSectionData.interests.map((interest) => (
               <span key={interest} className={styles.interestTag}>
                 {interest}
               </span>
@@ -106,7 +104,7 @@ function About() {
           >
             <motion.div className={styles.columnHeader} variants={fadeInUp}>
               <FiBook className={styles.columnIcon} />
-              <h2 className={styles.columnTitle}>Education</h2>
+              <h2 className={styles.columnTitle}>{aboutSectionData.labels.education}</h2>
             </motion.div>
             
             <div className={styles.timeline}>
@@ -138,7 +136,7 @@ function About() {
           >
             <motion.div className={styles.columnHeader} variants={fadeInUp}>
               <FiBriefcase className={styles.columnIcon} />
-              <h2 className={styles.columnTitle}>Experience</h2>
+              <h2 className={styles.columnTitle}>{aboutSectionData.labels.experience}</h2>
             </motion.div>
             
             <div className={styles.timelineScroll}>
@@ -162,9 +160,41 @@ function About() {
             </div>
           </motion.div>
         </div>
+
+        {/* Clients & Collaborations Section */}
+        <motion.div
+          className={styles.clientsSection}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          <motion.div className={styles.clientsHeader} variants={fadeInUp}>
+            <FiLink className={styles.clientsIcon} />
+            <h2 className={styles.clientsTitle}>Clients & Collaborations</h2>
+          </motion.div>
+
+          <motion.div className={styles.clientsGrid} variants={fadeInUp}>
+            {clients.map((client) => (
+              <motion.a
+                key={client.name}
+                href={client.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.clientCard}
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img src={client.logo} alt={client.name} className={styles.clientLogo} />
+                <span className={styles.clientName}>{client.name}</span>
+              </motion.a>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )
 }
 
 export default About
+

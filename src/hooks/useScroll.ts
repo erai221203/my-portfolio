@@ -35,23 +35,37 @@ export function useScrollPosition() {
 }
 
 export function useActiveSection(sectionIds: string[]) {
-  const [activeSection, setActiveSection] = useState<string>('')
+  const [activeSection, setActiveSection] = useState<string>('home')
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
-        })
+      (entries: IntersectionObserverEntry[]) => {
+        // Filter entries that are currently intersecting
+        const intersectingEntries = entries.filter(entry => entry.isIntersecting)
+        
+        if (intersectingEntries.length === 0) return
+
+        // Find the entry with the highest intersection ratio among visible entries
+        const visibleEntry = intersectingEntries.reduce((prev, current) => 
+          current.intersectionRatio > prev.intersectionRatio ? current : prev
+        )
+
+        if (visibleEntry) {
+          setActiveSection(visibleEntry.target.id)
+        }
       },
-      { threshold: 0.5 }
+      { 
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+        rootMargin: '-20% 0px -20% 0px' // Account for navbar height
+      }
     )
 
+    // Observe all sections
     sectionIds.forEach((id) => {
       const element = document.getElementById(id)
-      if (element) observer.observe(element)
+      if (element) {
+        observer.observe(element)
+      }
     })
 
     return () => observer.disconnect()

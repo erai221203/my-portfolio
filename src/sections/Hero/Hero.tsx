@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FiDownload, FiArrowRight } from 'react-icons/fi'
 import { FaReact, FaNodeJs, FaPython, FaDocker, FaFigma } from 'react-icons/fa'
-import { personalInfo } from '../../data'
+import { personalInfo, heroSectionData, profileImages } from '../../data'
 import styles from './Hero.module.css'
 
 const containerVariants = {
@@ -25,19 +25,13 @@ const itemVariants = {
   },
 }
 
-const roles = [
-  'QA Intelligence Intern',
-
-  
-]
-
 function Hero() {
   const [roleIndex, setRoleIndex] = useState(0)
   const [displayText, setDisplayText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
 
   useEffect(() => {
-    const currentRole = roles[roleIndex]
+    const currentRole = heroSectionData.roles[roleIndex]
     const timeout = setTimeout(() => {
       if (!isDeleting) {
         if (displayText.length < currentRole.length) {
@@ -50,7 +44,7 @@ function Hero() {
           setDisplayText(displayText.slice(0, -1))
         } else {
           setIsDeleting(false)
-          setRoleIndex((prev) => (prev + 1) % roles.length)
+          setRoleIndex((prev) => (prev + 1) % heroSectionData.roles.length)
         }
       }
     }, isDeleting ? 50 : 100)
@@ -96,7 +90,7 @@ function Hero() {
           {/* Badge */}
           <motion.div className={styles.badge} variants={itemVariants}>
             <span className={styles.badgeDot} />
-            Available for opportunities
+            {heroSectionData.availabilityText}
           </motion.div>
 
           {/* Name */}
@@ -113,24 +107,19 @@ function Hero() {
 
           {/* Description */}
           <motion.p className={styles.description} variants={itemVariants}>
-            I craft exceptional digital experiences with clean code and creative solutions.
-            Passionate about building products that make a difference.
+            {heroSectionData.description.line1}
+            {' '}
+            {heroSectionData.description.line2}
           </motion.p>
 
           {/* Stats */}
           <motion.div className={styles.statsRow} variants={itemVariants}>
-            <div className={styles.stat}>
-              <div className={styles.statValue}>2+</div>
-              <div className={styles.statLabel}>Years Experience</div>
-            </div>
-            <div className={styles.stat}>
-              <div className={styles.statValue}>15+</div>
-              <div className={styles.statLabel}>Projects Completed</div>
-            </div>
-            <div className={styles.stat}>
-              <div className={styles.statValue}>5+</div>
-              <div className={styles.statLabel}>Happy Clients</div>
-            </div>
+            {heroSectionData.stats.map((stat) => (
+              <div key={stat.label} className={styles.stat}>
+                <div className={styles.statValue}>{stat.value}</div>
+                <div className={styles.statLabel}>{stat.label}</div>
+              </div>
+            ))}
           </motion.div>
 
           {/* CTA Buttons */}
@@ -141,7 +130,7 @@ function Hero() {
               whileHover={{ translateY: -4 }}
               whileTap={{ scale: 0.98 }}
             >
-              Let's Talk <FiArrowRight />
+              {heroSectionData.cta.primary} <FiArrowRight />
             </motion.button>
             <motion.button
               className={styles.secondaryBtn}
@@ -149,7 +138,7 @@ function Hero() {
               whileHover={{ translateY: -4 }}
               whileTap={{ scale: 0.98 }}
             >
-              <FiDownload /> Download CV
+              <FiDownload /> {heroSectionData.cta.secondary}
             </motion.button>
           </motion.div>
         </motion.div>
@@ -169,7 +158,7 @@ function Hero() {
             <div className={styles.profileCard}>
               <div className={styles.profileInner}>
                 <img 
-                  src="/assets/images/me/new.jpg" 
+                  src={profileImages.avatar}
                   alt={personalInfo.name}
                   className={styles.profileImage}
                 />

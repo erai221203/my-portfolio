@@ -38,11 +38,17 @@ function Navbar() {
   }
 
   const isActive = (item: { label: string; href: string }) => {
+    // For page routes (Skills, Certificates)
     if (item.href === '/skills') return location.pathname === '/skills'
     if (item.href === '/certificates') return location.pathname === '/certificates'
+    
+    // For anchor links (Home, About, Projects, Contact)
     if (location.pathname === '/') {
-      return activeSection === item.href.slice(1)
+      // Extract section ID from href (e.g., '#home' -> 'home')
+      const sectionId = item.href.startsWith('#') ? item.href.slice(1) : item.href
+      return activeSection === sectionId
     }
+    
     return false
   }
 

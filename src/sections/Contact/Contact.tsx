@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react'
 import { motion } from 'framer-motion'
-import { FiMail, FiMapPin, FiPhone, FiSend } from 'react-icons/fi'
+import { FiMail, FiMapPin, FiPhone, FiSend, FiCheck } from 'react-icons/fi'
 import { personalInfo } from '../../data'
 import styles from './Contact.module.css'
 
@@ -11,6 +11,11 @@ interface FormData {
   message: string
 }
 
+interface FormStatus {
+  state: 'idle' | 'loading' | 'success' | 'error'
+  message?: string
+}
+
 function Contact() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -18,7 +23,7 @@ function Contact() {
     subject: '',
     message: '',
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formStatus, setFormStatus] = useState<FormStatus>({ state: 'idle' })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -27,18 +32,47 @@ function Contact() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
+    setFormStatus({ state: 'loading' })
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    // In production, you would send the form data to your backend
-    console.log('Form submitted:', formData)
-    
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' })
-    setIsSubmitting(false)
-    alert('Thank you for your message! I will get back to you soon.')
+    try {
+      // Using Formspree for email handling
+      const response = await fetch('https://formspree.io/f/mbdpkebv', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      })
+
+      if (response.ok) {
+        setFormStatus({
+          state: 'success',
+          message: 'Thank you for your message! I will get back to you soon.',
+        })
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setFormStatus({ state: 'idle' })
+        }, 5000)
+      } else {
+        setFormStatus({
+          state: 'error',
+          message: 'Failed to send message. Please try again or ping me at ' + personalInfo.email,
+        })
+      }
+    } catch (error) {
+      setFormStatus({
+        state: 'error',
+        message: 'An error occurred. Please try again later.',
+      })
+      console.error('Form submission error:', error)
+    }
   }
 
   return (
@@ -175,18 +209,42 @@ function Contact() {
             <motion.button
               type="submit"
               className={styles.submitButton}
-              disabled={isSubmitting}
+              disabled={formStatus.state === 'loading'}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              {isSubmitting ? (
+              {formStatus.state === 'loading' ? (
                 'Sending...'
+              ) : formStatus.state === 'success' ? (
+                <>
+                  Message Sent <FiCheck />
+                </>
               ) : (
                 <>
                   Send Message <FiSend />
                 </>
               )}
             </motion.button>
+
+            {formStatus.state === 'success' && (
+              <motion.div
+                className={styles.successMessage}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
+                ✓ {formStatus.message}
+              </motion.div>
+            )}
+
+            {formStatus.state === 'error' && (
+              <motion.div
+                className={styles.errorMessage}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
+                ✕ {formStatus.message}
+              </motion.div>
+            )}
           </motion.form>
         </div>
       </div>

@@ -56,6 +56,8 @@ export interface Certificate {
   date: string
   url: string
   image?: string
+  fileName?: string
+  category?: 'online' | 'workshop' | 'award' | 'publication' | 'hackathon'
 }
 
 export interface Client {
