@@ -5,7 +5,7 @@ export const navItems: NavItem[] = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '/skills' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Cert', href: '/certificates' },
+  { label: 'Certificates', href: '/certificates' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -299,7 +299,7 @@ export const serviceIcons = {
 // Section-specific display content
 export const aboutSectionData = {
   title: 'About Me',
-  interests: ['Machine Learning', 'Computer Vision', 'Robotics', 'Photography', 'Chess', 'DJing'],
+  interests: ['Quality Assurance','Machine Learning', 'Computer Vision', 'Robotics', 'Photography', 'DJing'],
   stats: {
     projectsCompleted: '15+ Completed',
     fallbackStatus: 'Professional',
@@ -324,7 +324,7 @@ export const heroSectionData = {
   stats: [
     { value: '2+', label: 'Years Experience' },
     { value: '15+', label: 'Projects Completed' },
-    { value: '5+', label: 'Happy Clients' },
+    { value: '5+', label: 'Clients' },
   ],
   cta: {
     primary: "Let's Talk",

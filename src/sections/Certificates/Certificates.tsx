@@ -61,7 +61,7 @@ function Certificates() {
   ]
 
   return (
-    <section id="cert" className={`section ${styles.certificates}`}>
+    <section id="certificates" className={`section ${styles.certificates}`}>
       <div className="container">
         <motion.div
           className={styles.certificatesHeader}

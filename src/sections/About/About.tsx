@@ -107,22 +107,24 @@ function About() {
               <h2 className={styles.columnTitle}>{aboutSectionData.labels.education}</h2>
             </motion.div>
             
-            <div className={styles.timeline}>
-              {educationData.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className={styles.timelineItem}
-                  variants={fadeInUp}
-                >
-                  <div className={styles.timelineDot} />
-                  <div className={styles.timelineContent}>
-                    <h3 className={styles.itemTitle}>{item.institution}</h3>
-                    <span className={styles.itemPeriod}>{item.period}</span>
-                    <p className={styles.itemDescription}>{item.degree}</p>
-                    <p className={styles.itemGrade}>{item.grade}</p>
-                  </div>
-                </motion.div>
-              ))}
+            <div className={styles.timelineScroll}>
+              <div className={styles.timeline}>
+                {educationData.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className={styles.timelineItem}
+                    variants={fadeInUp}
+                  >
+                    <div className={styles.timelineDot} />
+                    <div className={styles.timelineContent}>
+                      <h3 className={styles.itemTitle}>{item.institution}</h3>
+                      <span className={styles.itemPeriod}>{item.period}</span>
+                      <p className={styles.itemDescription}>{item.degree}</p>
+                      <p className={styles.itemGrade}>{item.grade}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
 
